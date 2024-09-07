@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        if (nums.empty()) return 0; // Handle the case when the input vector is empty
+
+        int count = 1; // Start with one unique element
+
+        for (int i = 1; i < nums.size(); i++) { // Start from the second element
+            if (nums[i] != nums[i - 1]) { // Check if the current element is different from the previous one
+                nums[count] = nums[i]; // Place the unique element at the position of count
+                count++; // Increment the count of unique elements
+            }
+        }
+
+        return count; // Return the number of unique elements
+    }
+};
